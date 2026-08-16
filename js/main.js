@@ -14,8 +14,8 @@
       "hero.eyebrow": "დითეილინგ სტუდია • ვარკეთილი, თბილისი",
       "hero.title": "თქვენი ავტომობილი იმსახურებს სრულყოფილ მოვლას",
       "hero.sub": "სრული ქიმწმენდა, პოლირება, კერამიკული საფარი, ფირის გადაკვრა და შუშების დაბურვა — ერთ სივრცეში, ისთ ფოინთის გვერდით.",
-      "hero.ctaBook": "დაჯავშნე WhatsApp-ით",
-      "hero.badgeGoogle": "Google რეიტინგი",
+      "hero.ctaBook": "დაჯავშნეთ WhatsApp-ით",
+      "hero.badgeGoogle": "Google-ის რეიტინგი",
       "hero.badgeHours": "ყოველდღე",
       "hero.badgeFb": "რეკომენდაცია Facebook-ზე",
       "services.eyebrow": "რას გთავაზობთ",
@@ -28,7 +28,7 @@
       "services.s3.title": "კერამიკული საფარი",
       "services.s3.desc": "გრძელვადიანი დაცვა ქიმიური და მექანიკური ზემოქმედებისგან — სიღრმისეული ბზინვარებით.",
       "services.s4.title": "ფირის გადაკვრა",
-      "services.s4.desc": "დამცავი და დეკორატიული ფირები კუზოვისთვის — დაცული საღებავი და განახლებული იერსახე.",
+      "services.s4.desc": "დამცავი და დეკორატიული ფირები ავტომობილის ძარისთვის — დაცული საღებავი და განახლებული იერსახე.",
       "services.s5.title": "შუშების დაბურვა",
       "services.s5.desc": "პროფესიონალური ტონირება — კომფორტი, კონფიდენციალურობა და დაცვა მზისგან.",
       "services.custom.title": "ვერ პოულობთ სასურველს?",
@@ -45,8 +45,8 @@
       "works.after": "შედეგი",
       "works.more": "მეტი ვიდეო ჩვენს Instagram-ზე →",
       "booking.eyebrow": "დაჯავშნა 1 წუთში",
-      "booking.title": "დაჯავშნე ვიზიტი WhatsApp-ით",
-      "booking.sub": "აირჩიეთ სერვისი და დრო — ღილაკზე დაჭერით WhatsApp გაიხსნება უკვე შედგენილი შეტყობინებით. დაგვიდასტურებთ და გელოდებით!",
+      "booking.title": "დაჯავშნეთ ვიზიტი WhatsApp-ით",
+      "booking.sub": "აირჩიეთ სერვისი და დრო — ღილაკზე დაჭერით WhatsApp გაიხსნება უკვე შედგენილი შეტყობინებით. დაგიდასტურებთ და გელოდებით!",
       "booking.step1": "აირჩიეთ სერვისი",
       "booking.step2": "მიუთითეთ ავტომობილი და დრო",
       "booking.step3": "გააგზავნეთ WhatsApp-ში",
@@ -78,7 +78,7 @@
       "contact.hoursLabel": "სამუშაო საათები",
       "contact.hours": "ყოველდღე: 08:00 – 00:00",
       "contact.phoneLabel": "ტელეფონი",
-      "contact.maps": "გახსენი Google Maps-ში",
+      "contact.maps": "გახსენით Google Maps-ში",
       "contact.signCaption": "ჩვენი სტუდია კაკლიანის 35-ზე",
       "footer.tagline": "ავტომობილის სრული ქიმწმენდა / Detailing",
       "footer.address": "კაკლიანის 35, თბილისი",
@@ -112,7 +112,7 @@
       "hero.ctaBook": "Book via WhatsApp",
       "hero.badgeGoogle": "Google rating",
       "hero.badgeHours": "open daily",
-      "hero.badgeFb": "recommend on Facebook",
+      "hero.badgeFb": "recommended on Facebook",
       "services.eyebrow": "What we offer",
       "services.title": "Services",
       "services.select": "Select for booking",
@@ -134,7 +134,7 @@
       "works.c1": "Safe wash",
       "works.c2": "Interior deep clean",
       "works.c3": "Engine bay cleaning",
-      "works.c4": "Before detailing",
+      "works.c4": "the deep clean",
       "works.c5": "Mirror finish",
       "works.before": "Before",
       "works.after": "After",
@@ -192,8 +192,8 @@
       "wa.time": "🕐 Time",
       "wa.name": "👤 Name",
       "wa.note": "💬 Comment",
-      "meta.title": "CARION — Auto Detailing in Tbilisi | Interior Cleaning, Polishing, Ceramic",
-      "meta.desc": "CARION — full auto detailing, polishing, ceramic coating, protective film and window tinting in Tbilisi. 35 Kakliani St., next to East Point. Open daily 08:00–00:00."
+      "meta.title": "CARION — Auto Detailing in Tbilisi | Interior Cleaning, Polishing, Ceramic Coating",
+      "meta.desc": "CARION — full interior detailing, polishing, ceramic coating, protective film and window tinting in Tbilisi. 35 Kakliani St., next to East Point. Open daily 08:00–00:00."
     }
   };
 
@@ -368,7 +368,8 @@
         return;
       }
       var url = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(buildMessage());
-      window.open(url, "_blank", "noopener");
+      var win = window.open(url, "_blank", "noopener");
+      if (!win) window.location.href = url;
     });
   }
 

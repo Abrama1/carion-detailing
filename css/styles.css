@@ -17,7 +17,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
 body {
   background: var(--bg);
@@ -551,9 +551,7 @@ a:hover { color: var(--gold); }
   .footer-meta { text-align: left; }
 }
 
-@media (max-width: 640px) {
-  .section { padding: 60px 0; }
-
+@media (max-width: 900px) {
   .site-nav {
     display: none;
     position: absolute;
@@ -596,6 +594,11 @@ a:hover { color: var(--gold); }
 
   .header-inner { gap: 10px; }
   .header-actions { margin-left: auto; }
+}
+
+@media (max-width: 640px) {
+  .section { padding: 60px 0; }
+
   #headerWa span { display: none; }
   #headerWa { padding: 9px 11px; }
 
